@@ -1,0 +1,27 @@
+.table {
+  display: grid;
+  width: 100%;
+  overflow-x: hidden;
+  /* 设置列、行大小 fr单位是等分分配列空间*/
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200rpx 200rpx;
+  /* 有多余数据时，自动添加新行时默认行高为：200rpx */
+  grid-auto-rows: 200rpx;
+  /* 设置网格线大小 */
+  grid-gap: 10rpx;
+}
+
+.table-th {
+  font-weight: bold;
+  background-color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-td {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

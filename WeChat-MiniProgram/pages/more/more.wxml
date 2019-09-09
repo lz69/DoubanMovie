@@ -1,0 +1,6 @@
+<view class="table">
+  <block wx:for='{{tableData}}' wx:key='*this'>
+    <view class='table-th' wx:if='{{index<3}}'>{{item.name}}</view>
+    <view class='table-td' wx:else>{{item.name}}</view>
+  </block>
+</view>

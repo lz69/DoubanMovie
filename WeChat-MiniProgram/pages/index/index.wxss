@@ -1,0 +1,81 @@
+/**index.wxss**/
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.movietitle {
+  display: flex;
+  font-size: 24rpx;
+  font-weight: bold;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.out {
+  background: #ddd;
+  padding: 20rpx 10rpx;
+  width: 100%;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/*设置行内块*/
+
+.out .item {
+  width: 180rpx;
+  height: 260rpx;
+  background: white;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.inner {
+  width: 140rpx;
+  height: 200rpx;
+  border: 2rpx solid red;
+  background: white;
+  display: inline-block;
+  margin-right: 10rpx;
+  white-space: nowrap;
+}
+
+.titlecontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height::auto;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
