@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+
+const api = require('../../utils/api.js');
 
 Page({
   data: {
@@ -11,7 +13,6 @@ Page({
     canhidden: false,
     mode:"widthFix",
     subjects:[],
-    // test: "text"
   },
 
   moreShowing: function(event) {
@@ -26,29 +27,20 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+
+  onReady() {
     var that = this;
-    wx.request({
-      url: 'https://douban.uieee.com/v2/movie/in_theaters', //仅为示例，并非真实的接口地址
-      data: {
-        count:20
-      },
-      header: {
-        'content-type': 'application/text' // 默认值
-      },
-      success(res) {
-        wx.hideLoading()
-        that.setData({
-          subjects: res.data.subjects,
-        })
-      },
-      fail(res) {
-        wx.showToast({
-          title: '加载失败...',
-        })
-      }
+    api.requestInTheaters({
+      count: 20
+    }).then((subjects) => {
+      this.setData({
+        subjects: subjects
+      })
     })
 
+  },
+  
+  onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
